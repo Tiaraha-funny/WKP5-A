@@ -46,13 +46,40 @@ const recipes = [
 		],
 		id: 1596168522409,
 	},
-];
+]; 
+
 
 const renderCard = () => {
-	// check the recipes collection
-	// generate the HTML
-	// put it in the DOM
-};
+  // check the recipes collection
+    const recipeArray = Object.entries(recipes);
+    console.table(recipeArray);
 
+  // generate the HTML 
+  recipes.forEach(recipe => {
+    const myHTML = `
+  <h1>${recipe.title}</h1>
+  <img src="${recipe.picture}"/>
+  <p>${recipe.author}</p>
+  <p>${recipe.timing}</p>
+  <p>${recipe.difficulty}</p>
+`
+  container.insertAdjacentHTML('afterbegin', myHTML);
+  
+});
+}
+  //   // For each dataObject, create a new card and append it to the DOM
+  // recipes.forEach((card, i) => {
+  //   const positionFromLeft = i * 15;
+  //   const cardElement = document.createElement('div');
+  //   cardElement.setAttribute('data-value', card.value);
+  //   cardElement.classList.add('card', `${card.suit}-${card.value}`);
+  //   cardElement.style.left = `${positionFromLeft}px`;
+  //   cardsWrapper.append(cardElement);
+  // });
+  // }
+    
+	// put it in the DOM
+
+const container = document.querySelector('.container');
 const generateButton = document.querySelector('button.generate');
 generateButton.addEventListener('click', renderCard);
