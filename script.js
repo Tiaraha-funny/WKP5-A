@@ -195,6 +195,7 @@ const handleClickAdd = e => {
   console.log('my form');
   outerModal.classList.add('open');
   innerModal.innerHTML = myFormHTML;
+  return handleClickInfo;
 }
 
 addFormBtn.addEventListener('click', handleClickAdd);
