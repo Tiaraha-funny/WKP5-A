@@ -76,7 +76,7 @@ const renderCard = () => {
         </div>
           <button class="moreInfo btn">More info</button>
         </div>
-    </article>
+    </article>  
 `
     container.insertAdjacentHTML('afterbegin', myHTML);
 
@@ -195,7 +195,6 @@ const handleClickAdd = e => {
   console.log('my form');
   outerModal.classList.add('open');
   innerModal.innerHTML = myFormHTML;
-  return handleClickInfo;
 }
 
 addFormBtn.addEventListener('click', handleClickAdd);
