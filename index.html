@@ -2,57 +2,136 @@
 <html lang="en">
 
 <head>
-	<meta charset="UTF-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<title>WKP5</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>WKP5</title>
 </head>
 <style>
-	img {
-		max-width: 50%;
-	}
+  .recipeImg {
+    max-width: 100%;
+  }
+
+  .modalImg {
+    width: 200px;
+  }
 
   .container {
     display: flex;
     flex-direction: row;
   }
+
+  h1 {
+    font-size: 45px;
+  }
+
+  p {
+    padding: 16px;
+    font-size: 20px;
+  }
+
   article {
-    border-radius: 1px;
+    background-color: silver;
+    width: 1200px;
+    border-radius: 10px;
     border: 1px solid black;
+    margin-inline-end: 35px;
+  }
+
+  .btn {
+    padding: 5px;
+    font-size: 16px;
+    border-radius: 10spx;
+    cursor: pointer;
+    width: -webkit-fill-available;
+    background-color: hotpink;
+  }
+
+  .outer__modal {
+    display: grid;
+    place-items: center center;
+    background-color: hsla(0, 0%, 0%, 0.7);
+
+    /* modal specific */
+    pointer-events: none;
+    opacity: 0;
+    position: fixed;
+
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+  }
+
+  .outer__modal.open {
+    opacity: 1;
+    pointer-events: all;
+  }
+
+  .inner__modal {
+    background-color: white;
+    min-height: 400px;
+    min-width: 400px;
+    padding: 20px;
+  }
+
+  ul {
+    display: flex;
+    flex-direction: row;
     justify-content: space-between;
   }
 
-	.modal-outer {
-		border: 2px solid black;
-		border-radius: 10px;
-		/* modal specific */
-		pointer-events: none;
-		opacity: 0;
-		/* position: fixed; */
-		height: 20%;
-		width: 100%;
-		text-align: center;
-	}
+  .step {
+    width: 200px;
+  }
 
-	.modal-outer.open {
-		opacity: 1;
-		/* pointer-events: all; */
-	}
+  .div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
 
-	.modal-inner {
-		background-color: silver;
-		min-height: 100px;
-		min-width: 400px;
-		padding: 20px;
-	}
+  .big__tilte {
+    text-align: center;
+  }
+
+  .AddButton {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .generate {
+    margin-right: 20px;
+    border-radius: 8px;
+    font-size: 50px;
+    background-color: violet;
+  }
+
+  .generate:hover {
+    color: #60bdaa;
+    background-color: lavender;
+    place-content: center center;
+  }
+
+  form > p {
+    padding: 0;
+  }
+  
 </style>
 
 <body>
-	<div class="container"></div>
-	<button class="generate">GENERATE RECIPES</button>
-	<div class="outer__modal">
-		<div class="inner__modal">
-		</div>
-	</div>
+  <header>
+    <h1 class="big__tilte">ONJA'S COOKBOOK</h1>
+  </header>
+  <div class="container"></div>
+  <div class="AddButton">
+    <button class="generate">GENERATE RECIPES</button>
+    <button class="generate adding">ADD RECIPES</button>
+  </div>
+
+  <div class="outer__modal">
+    <div class="inner__modal">
+    </div>
+  </div>
 </body>
 <script src="script.js"></script>
 
